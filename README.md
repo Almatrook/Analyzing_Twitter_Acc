@@ -1,7 +1,7 @@
 
-The Effect of Human Movement, Security, and Shadowing on Latest Wireless LAN Standard (IEEE802.11ac) 
+Analyzing and Visualizing WeRateDogs twitter user account 
 
-# Thesis
+# Project
 
 
 
@@ -21,32 +21,42 @@ The Effect of Human Movement, Security, and Shadowing on Latest Wireless LAN Sta
 
 <!-- Overview -->
 ## Overview
-This thesis focuses on the evaluation of IEEE 802.11ac WLAN performance using TCP and UDP for both versions of the Internet Protocol (IPv4, IPv6) in three scenarios, namely, the effect 
-of implementing WPA2 security encryption, the impact of shadowing (walls) and distance in laboratory environment, and human movement effects in indoor environmental conditions. 
-This thesis will also provide knowledge about the behaviour of commonly used protocols on a new wireless standard (802.11ac) in real network environments. 
-The performance metrics of wireless network test-beds such as throughput, round trip time, and CPU utilisation are gathered and analysed.
+The analysis of tweets from the WeRateDogs account that was gathered and cleaned prior. 
+The goal of analyzing is to measure the most popular trends of dog breeds and stages over the time of the account based on the number of retweets and likes.
 
+This project was completed as part of Udacity's Data Analyst Nanodegree certification.
 
 
 <!-- Detail -->
 ## Details
-The thesis in partial fulfilment of the requirements for the degree of Master of Computing in Unitec Institute of Technology. 
-In this project, Two phases of this scenario were carried out, for the purpose of establishing a baseline and to help in analysing the impact of adding a WPA2 encryption on 
-the UDP and TCP traffic for both IPv4 and IPv6 over 802.11ac WLANs. The first phase of the experiment was for measuring the throughput, RTT, and CPU utilisation 
-under normal conditions (no security applied in AP), which aimed at achieving a highest throughput in typical conditions. 
-The second phase of the experiment was to analyse these matrices when WPA2 encryption was applied in order to measure the impact of WPA2 encryption over an 802.11ac Wi-Fi network.
+twitter-archive-enhanced.csv
+	File contains basic tweet data (tweet ID, timestamp, text, etc.) for all 5000+ of their tweets as they stood on August 1, 2017.
+	There are 2356 rows which filtered by tweets with ratings only.
+	There are retweet count and favorite count are two of the notable column omissions.
+	The ratings probably aren't all correct. Same goes for the dog names and probably dog stages (see below for more information on these) too. You'll need to assess and clean these columns if you want to use them for analysis and visualization.
+tweet_json.txt
+	Read this file line by line into a pandas DataFrame with (at minimum) tweet ID, retweet count, and favorite count.
+twitter_api.py
+	This is the Twitter API code to gather some of the required data for the project. Read the code and comments, understand how the code works, then copy and paste it into your notebook.
+image-predictions.tsv
+	File a table full of image predictions (the top three only) alongside each tweet ID, image URL, and the image number that corresponded 
+to the most confident prediction (numbered 1 to 4 since tweets can have up to four images).
+	File is hosted on Udacity's servers and should be downloaded programmatically using the Requests library
 
 
 <!-- GETTING STARTED -->
 ## Findings
-The findings of this study concludes that the shadowing environment and distance have a severe impact of 802.11ac WLAN performance. Applying WPA2 security also reduces the performance metrics measurement. 
-The presence of human movement has an insignificant impact of the 802.11ac WLAN performance. 
-IPv4 outperforms IPv6 on different levels, depending on the network environment. TCP provides lower performance than UDP.
-
+Puppos are more popular on average than other stages of the dog. On the contrary, Puppers have lower numbers on average, there are a lot of outliers.
+On the table, there are 113 breeds of dog, the most portion of them are not popular.
+Based on the top three image predictions, the most common breeds of dog is Golden Retriever and then Labrator Retrievers.
+The @dog_rates account was active in 2016 more than in 2015 with almost 50% of all tweets in the database, and then the account activity was decreased by the number of tweets in 2017 with nearly 19%.
 
 <!-- Statistical Analysis Scope -->
 ## Statistical Analysis Scope
-- Exploratory Data Analysis
+Data wrangling
+- Data Gathering
+- Data Assessing
+- Data Cleaning
 - Data visualizations
 
 
@@ -54,7 +64,8 @@ IPv4 outperforms IPv6 on different levels, depending on the network environment.
 <!-- Tools -->
 ## Tools
 
-MS Excel
+Python libraries : numpy, pandas, matplotlib, seaborn
+
 
 
 
@@ -63,7 +74,7 @@ MS Excel
 
 1. Clone the repo
 ```sh
-git clone https://github.com/Almatrook/Thesis.git
+git clone https://github.com/Almatrook/Analyzing_Twitter_Acc
 ```
 
 
